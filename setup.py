@@ -8,7 +8,7 @@ executables = [
 # ne pas mettre "base = ..." si le programme n'est pas en mode graphique, comme c'est le cas pour chiffrement.py.
   
 buildOptions = dict( 
-        includes = ["os","subprocess","tkinter"],
+        includes = ["os","subprocess","tkinter","re"],
         include_files = ["icon.ico"]
 )
   

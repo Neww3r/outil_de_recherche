@@ -1,4 +1,5 @@
 import os
+from re import fullmatch
 import subprocess
 import json
 from tkinter import *
@@ -230,9 +231,13 @@ def load_extentions():
         
     root.update()
 
-
+def check_ext_format(ext):
+    regex = r"\.[A-Za-z0-9_~]+"
+    return fullmatch(regex, ext)
+ 
+    
 def addext(ext_var,ext_entry,tree):
-    if ext_var.get() == "" or ext_var.get()[0] != '.':
+    if not check_ext_format(ext_var.get()):
         messagebox.showerror('Erreur', "Erreur: format de l'extension invalide.")
         return
     dict = {}
